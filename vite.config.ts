@@ -1,9 +1,10 @@
-import react from '@vitejs/plugin-react'
-import ssr from 'vite-plugin-ssr/plugin'
-import { UserConfig } from 'vite'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import ssr from 'vite-plugin-ssr/plugin';
+import mdx from '@mdx-js/rollup';
 
-const config: UserConfig = {
-  plugins: [react(), ssr()]
-}
+const config = defineConfig({
+  plugins: [react(), mdx({ jsxImportSource: '@emotion/react' }), ssr()],
+});
 
-export default config
+export default config;
