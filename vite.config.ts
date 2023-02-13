@@ -5,7 +5,11 @@ import mdx from '@mdx-js/rollup';
 
 const config = defineConfig({
   base: '/vite-ssr',
-  plugins: [react(), mdx({ jsxImportSource: '@emotion/react' }), ssr()],
+  plugins: [
+    react(),
+    mdx({ jsxImportSource: '@emotion/react' }),
+    ssr({ prerender: true }),
+  ],
 });
 
 export default config;
