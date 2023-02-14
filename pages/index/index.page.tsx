@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import mdxComponents from '../../components/mdxComponents';
 import Info from '../../components/mdx/info.mdx';
 import Comments from '../../components/mdx/comments.mdx';
+import Media from '../../components/mdx/media.mdx';
 
 function NavItem({
   children,
@@ -116,6 +117,7 @@ function Page() {
           <Heading as="h2" fontStyle="italic" textAlign="center">
             Media
           </Heading>
+          <Media components={mdxComponents} />
         </Container>
       </Box>
     </>
