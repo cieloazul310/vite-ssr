@@ -1,18 +1,21 @@
 import * as React from 'react';
 import { Box, Flex, Container, Heading, Text } from '@chakra-ui/react';
+import Seo from './Seo';
+import { usePageContext } from '../renderer/usePageContext';
 
-type LayoutProps = React.PropsWithChildren<{
-  title: string;
-  description?: string;
-}>;
+type LayoutProps = React.PropsWithChildren<{}>;
 
-function Layout({ children, title, description }: LayoutProps) {
+function Layout({ children }: LayoutProps) {
+  const pageContext = usePageContext();
+  const title = pageContext.exports?.documentProps?.title;
+  const description = pageContext.exports?.documentProps?.description;
   return (
     <>
+      <Seo title={title} description={description} />
       <Box p={2}>
         <Flex
           rounded="2xl"
-          bgGradient="linear(to-r, cyan.300, gray.100)"
+          bgGradient="linear(to-r,  gray.200, cyan.300)"
           height="50vh"
           flexDirection="column"
           justifyContent="center"
