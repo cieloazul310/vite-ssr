@@ -3,40 +3,39 @@ import { Helmet } from 'react-helmet-async';
 
 export type SeoProps = React.PropsWithChildren<{
   title?: string;
+  description?: string;
+  siteTitle: string;
   type?: 'website' | 'book' | 'profile' | string;
   twitterCard?: 'summary' | 'summary_large_image' | 'app' | 'player';
-  description?: string;
   image?: string;
 }>;
 
 function Seo({
   title,
   description,
+  siteTitle,
   image,
   children,
   type = 'website',
   twitterCard = 'summary',
 }: SeoProps) {
-  const siteMetadata = {
-    title: 'Vite SSR Example',
-    description: 'Vite SSR example site with Chakra UI.',
-  };
-  const pageTitle = title
-    ? `${title} - ${siteMetadata.title}`
-    : siteMetadata.title;
-  const pageDescription = description ?? siteMetadata.description;
+  const pageTitle = title ? `${title} - ${siteTitle}` : siteTitle;
 
   return (
     <Helmet prioritizeSeoTags>
       <title>{pageTitle}</title>
-      <meta name="description" content={pageDescription} />
       <meta name="og:type" content={type} />
       <meta name="og:title" content={pageTitle} />
-      <meta name="og:description" content={pageDescription} />
-      <meta name="twitter:card" content={twitterCard} />
-      <meta name="twitter:site" content={siteMetadata.title} />
       <meta name="twitter:title" content={pageTitle} />
-      <meta name="twitter:description" content={pageDescription} />
+      <meta name="twitter:site" content={siteTitle} />
+      {description ? (
+        <>
+          <meta name="description" content={description} />
+          <meta name="og:description" content={description} />
+          <meta name="twitter:description" content={description} />
+        </>
+      ) : null}
+      <meta name="twitter:card" content={twitterCard} />
       {image ? (
         <>
           <meta name="image" content={image} />
