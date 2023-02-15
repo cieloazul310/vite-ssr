@@ -11,7 +11,6 @@
     "build": "vite build",
     "server": "ts-node ./server/index.ts",
     "server:prod": "cross-env NODE_ENV=production ts-node ./server/index.ts",
-    "server:static": "npx serve dist/client",
     "format": "prettier \"{components,pages,renderer,server}/**/*.{js,jsx,ts,tsx}\" --parser typescript --write"
   },
   "dependencies": {

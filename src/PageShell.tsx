@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { HelmetProvider } from 'react-helmet-async';
-import Layout from '../components/layout';
+import Layout from './layout';
 import { PageContextProvider } from './usePageContext';
+import theme from './theme';
 import type { PageContext } from './types';
 
 function PageShell({
@@ -17,7 +18,7 @@ function PageShell({
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
-        <ChakraProvider>
+        <ChakraProvider theme={theme}>
           <HelmetProvider context={helmetContext}>
             <Layout>{children}</Layout>
           </HelmetProvider>

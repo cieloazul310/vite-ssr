@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Seo from './Seo';
-import { usePageContext } from '../renderer/usePageContext';
+import Seo from '../components/Seo';
+import { usePageContext } from '../usePageContext';
 
 type LayoutProps = React.PropsWithChildren<{}>;
 

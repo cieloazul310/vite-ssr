@@ -4,9 +4,6 @@
 import React, { useContext } from 'react';
 import type { PageContext } from './types';
 
-export { PageContextProvider };
-export { usePageContext };
-
 const Context = React.createContext<PageContext>(undefined as any);
 
 function PageContextProvider({
@@ -23,3 +20,6 @@ function usePageContext() {
   const pageContext = useContext(Context);
   return pageContext;
 }
+
+export { PageContextProvider };
+export { usePageContext };

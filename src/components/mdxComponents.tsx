@@ -45,7 +45,7 @@ export function H2({ _first, ...props }: Record<string, any>) {
       mb={4}
       size="lg"
       borderBottomWidth="1px"
-      borderBottomColor="cyan.400"
+      borderBottomColor="red.600"
       _first={{ ..._first, ...firstStyle }}
       {...props}
     />
@@ -125,7 +125,7 @@ export function Blockquote(props: Record<string, any>) {
     <Text
       as="blockquote"
       my={4}
-      bg="cyan.100"
+      bg="red.100"
       px={[2, 2, 4]}
       py={8}
       rounded="xl"
@@ -140,7 +140,7 @@ export function CodeBlock(props: Record<string, any>) {
       as="pre"
       overflowX="scroll"
       display="block"
-      bg="cyan.100"
+      bg="red.100"
       whiteSpace="pre"
       rounded="xl"
       {...props}

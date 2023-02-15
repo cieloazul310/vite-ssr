@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
-import { PageShell } from './PageShell';
+import { PageShell } from '../src/PageShell';
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr';
-import helmetToString from '../components/helmetToString';
-import logoUrl from './logo.svg';
-import type { PageContextServer } from './types';
+import helmetToString from '../src/components/helmetToString';
+import logoUrl from '../src/assets/logo.svg';
+import type { PageContextServer } from '../src/types';
 
 // See https://vite-plugin-ssr.com/data-fetching
 export const passToClient = ['pageProps', 'urlPathname'];
