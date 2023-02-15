@@ -8,7 +8,7 @@ type SectionProps = React.PropsWithChildren<{
 
 function Section({ children, title, id }: SectionProps) {
   return (
-    <Box pt={[2, "64px"]} pb={[2, 8]} px={[2, 8]} id={id}>
+    <Box pt={[2, '64px']} pb={[2, 8]} px={[2, 8]} id={id}>
       <Container
         as="article"
         maxWidth="container.lg"

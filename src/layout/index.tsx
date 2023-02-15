@@ -10,7 +10,7 @@ function Layout({ children }: LayoutProps) {
   const description = pageContext.exports?.documentProps?.description;
   return (
     <>
-      <Seo title={title} description={description} />
+      <Seo title={title} description={description} siteTitle="Vite SSR" />
       {children}
     </>
   );
