@@ -9,7 +9,10 @@ function isHelmetContext(
 function helmetToString(context: FilledContext | {}) {
   if (!isHelmetContext(context)) return '';
   const { helmet } = context;
-  return (Object.values(helmet) as HelmetDatum[]).map(({ toString }) => toString()).filter((str) => str !== '').join('');
+  return (Object.values(helmet) as HelmetDatum[])
+    .map(({ toString }) => toString())
+    .filter((str) => str !== '')
+    .join('');
 }
 
 export default helmetToString;
