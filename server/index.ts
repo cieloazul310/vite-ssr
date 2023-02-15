@@ -4,12 +4,17 @@ import express from 'express';
 import compression from 'compression';
 import { renderPage } from 'vite-plugin-ssr';
 import { root } from './root.js';
+
 const isProduction = process.env.NODE_ENV === 'production';
+const base = '/vite-ssr';
 
 startServer();
 
 async function startServer() {
-  const app = express();
+  const appContainer = express();
+  const { Router } = express;
+  const app = Router();
+  appContainer.use(base, app);
 
   app.use(compression());
 
@@ -41,6 +46,6 @@ async function startServer() {
   });
 
   const port = process.env.PORT || 3000;
-  app.listen(port);
+  appContainer.listen(port);
   console.log(`Server running at http://localhost:${port}`);
 }
